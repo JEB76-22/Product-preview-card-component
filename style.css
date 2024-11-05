@@ -1,0 +1,127 @@
+
+:root{
+    --Very-dark-blue: hsl(212, 21%, 14%);
+    --Dark-grayish-blue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+    --Dark-cyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+    --font-headings: "Fraunces", serif;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Montserrat", serif;
+    background-color: var(--Cream);
+}
+.main{
+    max-width: 800px;
+    min-height: 760px;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+    animation: fade .8s .6s both ease-in;
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+.main__bg{
+    border-radius: 10px 10px 0 0;
+    min-height: 250px;
+    height: 100%;
+    background-image: url(/images/image-product-mobile.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.main__texts{
+    background-color: var(--White);
+    padding: 1.5em 2em;
+    border-radius: 0 0 10px 10px;
+}
+.main__product{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--Dark-grayish-blue);
+    font-size: .8rem;
+    font-weight: 500;
+}
+.main__title{
+    font-family: var(--font-headings);
+    font-size: 2rem;
+    margin: .8rem 0 1.2rem;
+    color: var(--Very-dark-blue);
+}
+.main__paragraph{
+    line-height: 1.5;
+    margin-bottom: 1.8em;
+    color: var(--Dark-grayish-blue);
+    font-weight: 500;
+}
+.main__price{
+    display: flex;
+    gap: 1em;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--Dark-cyan);
+    font-family: var(--font-headings);
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.main__sold{
+    font-size: 12px;
+    font-family: "Montserrat", serif;
+    text-decoration: line-through;
+    color: var(--Dark-grayish-blue);
+    font-weight: 500;
+}
+.main__cta{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 1em;
+    justify-content: center;
+
+    margin-top: 1.5em;
+    padding: 1em 0;
+    background-color: var(--Dark-cyan);
+    text-decoration: none;
+    color: var(--White);
+    border-radius: 8px;
+    font-weight: 600;
+
+    transition: background-color 1s linear;
+}
+.main__cta:hover{
+    background-color: hsl(157, 35%, 19%);;
+}
+.main__cta::before{
+    content: url(/images/icon-cart.svg);
+}
+
+
+/* media 667px */
+@media  (min-width:667px){
+    .main__bg{
+        border-radius: 10px 0 0 10px;
+    }
+    .main__texts{
+        border-radius: 0 10px 10px 0;
+    }
+    .main__bg{
+  
+        background-image: url(/images/image-product-desktop.jpg);
+    }
+}
